@@ -3,10 +3,9 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import jdatetime
 from datetime import datetime
 import logging
-import os
 
-# تنظیمات اولیه - بعداً با محیط اجرا جایگزین می‌شود
-BOT_TOKEN = os.getenv('BOT_TOKEN', "YOUR_BOT_TOKEN_HERE")
+# توکن درست ربات
+BOT_TOKEN = "8173424191:AAH8602bfeYajQkQ1ux5mIEO1CIPC_xuGRk"
 logging.basicConfig(level=logging.INFO)
 
 def get_persian_date():
@@ -112,10 +111,6 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     """تابع اصلی اجرای ربات"""
-    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
-        print("❌ لطفاً توکن ربات را در فایل تنظیمات قرار دهید")
-        return
-    
     application = Application.builder().token(BOT_TOKEN).build()
     
     # ثبت هندلرها
@@ -124,11 +119,9 @@ def main():
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
     
     print("🤖 ربات فرش الماس راه‌اندازی شد...")
-    print("📁 کدها در GitHub ذخیره شدند")
-    print("🔧 آماده اتصال به سرور و Google Sheets")
+    print("✅ به @almas_carpet_bot بروید و /start بفرستید")
     
-    # در این مرحله فقط کدها ذخیره می‌شوند
-    # اجرا در مرحله بعد با سرور انجام می‌شود
+    application.run_polling()
 
 if __name__ == '__main__':
     main()
