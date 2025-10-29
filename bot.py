@@ -5,7 +5,7 @@ from datetime import datetime
 import logging
 
 # توکن درست ربات
-BOT_TOKEN = "8173424191:AAH8602bfeYajQkQ1ux5mIEO1CIPC_xuGRk"
+BOT_TOKEN = "8173424191:AAH86O2bfeYajQkQ1ux5mIEO1CIPC_xuGRk"
 logging.basicConfig(level=logging.INFO)
 
 def get_persian_date():
